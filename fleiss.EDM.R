@@ -1,5 +1,5 @@
 fleiss.EDM <- function(data, conf.1.rm = TRUE, polarize = FALSE, iterations = 1000){
-        require("psych")
+        require("irr")
         source("clean.data.R")
         source("reliability.check.R")
         dt <- clean.data.subjectwise(reliability.check(data), conf.1.rm=conf.1.rm, polarize=polarize)
@@ -14,9 +14,8 @@ fleiss.EDM <- function(data, conf.1.rm = TRUE, polarize = FALSE, iterations = 10
                 if (i == 1) colnames(fd) = colnames(fleiss$results)
                 fd <- rbind(fd, fleiss$value)
         }
-        print(summary(fd))
+        print(describe(fd))
 }
 
 # ------------------------------------------------------------------------------
 # David López Mejía, June 2014
-
