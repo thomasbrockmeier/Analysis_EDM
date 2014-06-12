@@ -1,8 +1,8 @@
-icc.EDM <- function(data, iterations = 1000){
+icc.EDM <- function(data, conf.1.rm = TRUE, polarize = FALSE, iterations = 1000){
         require("psych")
         source("clean.data.R")
         source("reliability.check.R")
-        dt <- clean.data.subjectwise(reliability.check(data))
+        dt <- clean.data.subjectwise(reliability.check(data), conf.1.rm=conf.1.rm, polarize=polarize)
         desc <- as.data.frame(describe(dt))
         tmin <- min(desc$n)
         fd <- as.data.frame(matrix(nrow=0, ncol=8))
