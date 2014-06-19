@@ -14,7 +14,9 @@ fleiss.EDM <- function(data, conf.1.rm = TRUE, polarize = FALSE, iterations = 10
                 if (i == 1) colnames(fd) = colnames(fleiss$results)
                 fd <- rbind(fd, fleiss$value)
         }
+        print(paste("Minimum ratings: ", as.character(tmin)))
         print(describe(fd))
+        
 }
 
 # ------------------------------------------------------------------------------

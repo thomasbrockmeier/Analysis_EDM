@@ -2,7 +2,7 @@
 # common descriptive statistics. The inputs are the data to be processed, and if
 # said data is raw (default = TRUE).
 
-descriptives <- function(data, raw=TRUE, conf.1.rm = TRUE, tracknames = TRUE) {
+descriptives <- function(data, raw=TRUE, conf.1.rm = TRUE, tracknames = TRUE, polarize=FALSE) {
         require("psych")
 #         Load the pair list.
         source("tracklist.R")
@@ -17,7 +17,7 @@ descriptives <- function(data, raw=TRUE, conf.1.rm = TRUE, tracknames = TRUE) {
 #                 Remove unreliable cases
                 reliable.data <- reliability.check(data)
 #                 Clean and format the remaining cases
-                clean.data <- clean.data.subjectwise(raw.data=reliable.data, conf.1.rm=conf.1.rm)
+                clean.data <- clean.data.subjectwise(raw.data=reliable.data, conf.1.rm=conf.1.rm, polarize=polarize)
                 desc <- as.data.frame(describe(clean.data))
         } else {
                 desc <- as.data.frame(describe(data))

@@ -44,7 +44,7 @@ iterations.
 # The current raw dataset was loaded as "rtim"
 # The variable "conf.1.rm" stands for "confidence level 1: remove"
 # The variable "polarize" changes the data from 4-point base to 2-point base.
-fexample <- fleiss.EDM(data=rtim, conf.1.rm=FALSE, polarize=FALSE, iterations=200)
+fexample <- fleiss.EDM(data=rtim, conf.1.rm=FALSE, polarize=FALSE, iterations=1000)
 ```
 
 ```
@@ -53,14 +53,14 @@ fexample <- fleiss.EDM(data=rtim, conf.1.rm=FALSE, polarize=FALSE, iterations=20
 ```
 
 ```
-##                    vars   n mean   sd median trimmed  mad  min  max range
-## X0.144861983091651    1 200 0.15 0.01   0.15    0.15 0.01 0.12 0.19  0.07
+##                    vars    n mean   sd median trimmed  mad  min  max range
+## X0.156440624672466    1 1000 0.16 0.01   0.16    0.16 0.01 0.12 0.19  0.08
 ##                    skew kurtosis se
-## X0.144861983091651 0.14    -0.32  0
+## X0.156440624672466 0.09    -0.15  0
 ```
 
-Here we can observe how out of the 200 iterations, we obtained a *mean*
-of **0.15**, a *minimum* of **0.12**, and a *maximum* of **0.19**.
+Here we can observe how out of the 1000 iterations, we obtained a *mean*
+of **0.16**, a *minimum* of **0.12**, and a *maximum* of **0.19**.
 
 #### 2-point scale
 
@@ -68,17 +68,17 @@ of **0.15**, a *minimum* of **0.12**, and a *maximum* of **0.19**.
 # The current raw dataset was loaded as "rtim"
 # The variable "conf.1.rm" stands for "confidence level 1: remove"
 # The variable "polarize" changes the data from 4-point base to 2-point base.
-fexample <- fleiss.EDM(data=rtim, conf.1.rm=FALSE, polarize=TRUE, iterations=200)
+fexample <- fleiss.EDM(data=rtim, conf.1.rm=FALSE, polarize=TRUE, iterations=1000)
 ```
 
 ```
-##                    vars   n mean   sd median trimmed  mad  min  max range
-## X0.129523009315755    1 200 0.13 0.01   0.13    0.13 0.01 0.09 0.17  0.08
-##                     skew kurtosis se
-## X0.129523009315755 -0.04      0.9  0
+##                    vars    n mean   sd median trimmed  mad  min  max range
+## X0.117697793609521    1 1000 0.13 0.01   0.13    0.13 0.01 0.09 0.17  0.08
+##                    skew kurtosis se
+## X0.117697793609521 0.03    -0.27  0
 ```
 
-Here we can observe how out of the 200 iterations, we obtained a *mean*
+Here we can observe how out of the 1000 iterations, we obtained a *mean*
 of **0.13**, a *minimum* of **0.09**, and a *maximum* of **0.17**.
 
 ## Interclass Correlation Coefficient
@@ -101,24 +101,24 @@ of times as deemed necessary.
 # The current raw dataset was loaded as "rtim"
 # The variable "conf.1.rm" stands for "confidence level 1: remove"
 # The variable "polarize" changes the data from 4-point base to 2-point base.
-icc.EDM(data=rtim, conf.1.rm=FALSE, polarize=FALSE, iterations=200)
+icc.EDM(data=rtim, conf.1.rm=FALSE, polarize=FALSE, iterations=1000)
 ```
 
 ```
 ##      type                ICC              F             df1     
-##  Length:200         Min.   :0.129   Min.   :2.19   Min.   :189  
+##  Length:1000        Min.   :0.123   Min.   :2.12   Min.   :189  
 ##  Class :character   1st Qu.:0.148   1st Qu.:2.39   1st Qu.:189  
-##  Mode  :character   Median :0.156   Median :2.48   Median :189  
+##  Mode  :character   Median :0.157   Median :2.49   Median :189  
 ##                     Mean   :0.157   Mean   :2.49   Mean   :189  
 ##                     3rd Qu.:0.165   3rd Qu.:2.59   3rd Qu.:189  
-##                     Max.   :0.189   Max.   :2.86   Max.   :189  
+##                     Max.   :0.194   Max.   :2.92   Max.   :189  
 ##       df2             p             lower bound      upper bound   
-##  Min.   :1330   Min.   :0.00e+00   Min.   :0.0889   Min.   :0.179  
+##  Min.   :1330   Min.   :0.00e+00   Min.   :0.0828   Min.   :0.171  
 ##  1st Qu.:1330   1st Qu.:0.00e+00   1st Qu.:0.1057   1st Qu.:0.200  
-##  Median :1330   Median :0.00e+00   Median :0.1124   Median :0.208  
-##  Mean   :1330   Mean   :1.78e-17   Mean   :0.1132   Mean   :0.209  
+##  Median :1330   Median :0.00e+00   Median :0.1134   Median :0.209  
+##  Mean   :1330   Mean   :1.17e-16   Mean   :0.1135   Mean   :0.209  
 ##  3rd Qu.:1330   3rd Qu.:0.00e+00   3rd Qu.:0.1211   3rd Qu.:0.219  
-##  Max.   :1330   Max.   :1.78e-15   Max.   :0.1421   Max.   :0.244
+##  Max.   :1330   Max.   :2.92e-14   Max.   :0.1466   Max.   :0.249
 ```
 
 #### 2-point scale
@@ -127,24 +127,24 @@ icc.EDM(data=rtim, conf.1.rm=FALSE, polarize=FALSE, iterations=200)
 # The current raw dataset was loaded as "rtim"
 # The variable "conf.1.rm" stands for "confidence level 1: remove"
 # The variable "polarize" changes the data from 4-point base to 2-point base.
-icc.EDM(data=rtim, conf.1.rm=FALSE, polarize=TRUE, iterations=200)
+icc.EDM(data=rtim, conf.1.rm=FALSE, polarize=TRUE, iterations=1000)
 ```
 
 ```
-##      type                ICC              F             df1     
-##  Length:200         Min.   :0.106   Min.   :1.95   Min.   :189  
-##  Class :character   1st Qu.:0.126   1st Qu.:2.16   1st Qu.:189  
-##  Mode  :character   Median :0.134   Median :2.24   Median :189  
-##                     Mean   :0.135   Mean   :2.25   Mean   :189  
-##                     3rd Qu.:0.142   3rd Qu.:2.33   3rd Qu.:189  
-##                     Max.   :0.163   Max.   :2.56   Max.   :189  
-##       df2             p            lower bound      upper bound   
-##  Min.   :1330   Min.   :0.0e+00   Min.   :0.0679   Min.   :0.152  
-##  1st Qu.:1330   1st Qu.:0.0e+00   1st Qu.:0.0862   1st Qu.:0.175  
-##  Median :1330   Median :0.0e+00   Median :0.0932   Median :0.184  
-##  Mean   :1330   Mean   :5.5e-13   Mean   :0.0935   Mean   :0.185  
-##  3rd Qu.:1330   3rd Qu.:6.0e-15   3rd Qu.:0.1005   3rd Qu.:0.193  
-##  Max.   :1330   Max.   :2.0e-11   Max.   :0.1187   Max.   :0.216
+##      type                ICC               F             df1     
+##  Length:1000        Min.   :0.0873   Min.   :1.76   Min.   :189  
+##  Class :character   1st Qu.:0.1253   1st Qu.:2.15   1st Qu.:189  
+##  Mode  :character   Median :0.1346   Median :2.24   Median :189  
+##                     Mean   :0.1348   Mean   :2.25   Mean   :189  
+##                     3rd Qu.:0.1439   3rd Qu.:2.35   3rd Qu.:189  
+##                     Max.   :0.1808   Max.   :2.77   Max.   :189  
+##       df2             p             lower bound      upper bound   
+##  Min.   :1330   Min.   :0.00e+00   Min.   :0.0515   Min.   :0.131  
+##  1st Qu.:1330   1st Qu.:0.00e+00   1st Qu.:0.0852   1st Qu.:0.174  
+##  Median :1330   Median :0.00e+00   Median :0.0935   Median :0.185  
+##  Mean   :1330   Mean   :1.40e-11   Mean   :0.0936   Mean   :0.185  
+##  3rd Qu.:1330   3rd Qu.:0.00e+00   3rd Qu.:0.1017   3rd Qu.:0.195  
+##  Max.   :1330   Max.   :1.29e-08   Max.   :0.1349   Max.   :0.235
 ```
 
 ## Within Participant Concordance
@@ -246,24 +246,24 @@ Here I will use the ICC function to gain some new insights on it.
 # The current raw dataset was loaded as "rrhy"
 # The variable "conf.1.rm" stands for "confidence level 1: remove"
 # The variable "polarize" changes the data from 4-point base to 2-point base.
-icc.EDM(data=rrhy, conf.1.rm=FALSE, polarize=FALSE, iterations=200)
+icc.EDM(data=rrhy, conf.1.rm=FALSE, polarize=FALSE, iterations=1000)
 ```
 
 ```
 ##      type                ICC              F             df1     
-##  Length:200         Min.   :0.252   Min.   :4.37   Min.   :189  
-##  Class :character   1st Qu.:0.280   1st Qu.:4.88   1st Qu.:189  
-##  Mode  :character   Median :0.294   Median :5.16   Median :189  
-##                     Mean   :0.294   Mean   :5.18   Mean   :189  
-##                     3rd Qu.:0.307   3rd Qu.:5.43   3rd Qu.:189  
-##                     Max.   :0.343   Max.   :6.23   Max.   :189  
+##  Length:1000        Min.   :0.241   Min.   :4.17   Min.   :189  
+##  Class :character   1st Qu.:0.279   1st Qu.:4.88   1st Qu.:189  
+##  Mode  :character   Median :0.292   Median :5.12   Median :189  
+##                     Mean   :0.292   Mean   :5.14   Mean   :189  
+##                     3rd Qu.:0.306   3rd Qu.:5.40   3rd Qu.:189  
+##                     Max.   :0.353   Max.   :6.46   Max.   :189  
 ##       df2             p      lower bound     upper bound   
-##  Min.   :1710   Min.   :0   Min.   :0.204   Min.   :0.308  
-##  1st Qu.:1710   1st Qu.:0   1st Qu.:0.230   1st Qu.:0.338  
-##  Median :1710   Median :0   Median :0.243   Median :0.353  
-##  Mean   :1710   Mean   :0   Mean   :0.243   Mean   :0.353  
-##  3rd Qu.:1710   3rd Qu.:0   3rd Qu.:0.255   3rd Qu.:0.366  
-##  Max.   :1710   Max.   :0   Max.   :0.290   Max.   :0.404
+##  Min.   :1710   Min.   :0   Min.   :0.194   Min.   :0.296  
+##  1st Qu.:1710   1st Qu.:0   1st Qu.:0.229   1st Qu.:0.337  
+##  Median :1710   Median :0   Median :0.241   Median :0.350  
+##  Mean   :1710   Mean   :0   Mean   :0.242   Mean   :0.351  
+##  3rd Qu.:1710   3rd Qu.:0   3rd Qu.:0.254   3rd Qu.:0.365  
+##  Max.   :1710   Max.   :0   Max.   :0.299   Max.   :0.414
 ```
 
 #### 2-point scale
@@ -272,24 +272,24 @@ icc.EDM(data=rrhy, conf.1.rm=FALSE, polarize=FALSE, iterations=200)
 # The current raw dataset was loaded as "rrhy"
 # The variable "conf.1.rm" stands for "confidence level 1: remove"
 # The variable "polarize" changes the data from 4-point base to 2-point base.
-icc.EDM(data=rrhy, conf.1.rm=FALSE, polarize=TRUE, iterations=200)
+icc.EDM(data=rrhy, conf.1.rm=FALSE, polarize=TRUE, iterations=1000)
 ```
 
 ```
 ##      type                ICC              F             df1     
-##  Length:200         Min.   :0.252   Min.   :4.37   Min.   :189  
-##  Class :character   1st Qu.:0.285   1st Qu.:4.98   1st Qu.:189  
-##  Mode  :character   Median :0.297   Median :5.23   Median :189  
-##                     Mean   :0.298   Mean   :5.27   Mean   :189  
-##                     3rd Qu.:0.311   3rd Qu.:5.51   3rd Qu.:189  
-##                     Max.   :0.347   Max.   :6.32   Max.   :189  
+##  Length:1000        Min.   :0.244   Min.   :4.23   Min.   :189  
+##  Class :character   1st Qu.:0.284   1st Qu.:4.96   1st Qu.:189  
+##  Mode  :character   Median :0.297   Median :5.22   Median :189  
+##                     Mean   :0.298   Mean   :5.26   Mean   :189  
+##                     3rd Qu.:0.312   3rd Qu.:5.53   3rd Qu.:189  
+##                     Max.   :0.367   Max.   :6.80   Max.   :189  
 ##       df2             p      lower bound     upper bound   
-##  Min.   :1710   Min.   :0   Min.   :0.204   Min.   :0.308  
-##  1st Qu.:1710   1st Qu.:0   1st Qu.:0.234   1st Qu.:0.343  
+##  Min.   :1710   Min.   :0   Min.   :0.197   Min.   :0.300  
+##  1st Qu.:1710   1st Qu.:0   1st Qu.:0.233   1st Qu.:0.342  
 ##  Median :1710   Median :0   Median :0.246   Median :0.356  
 ##  Mean   :1710   Mean   :0   Mean   :0.247   Mean   :0.357  
-##  3rd Qu.:1710   3rd Qu.:0   3rd Qu.:0.259   3rd Qu.:0.370  
-##  Max.   :1710   Max.   :0   Max.   :0.294   Max.   :0.408
+##  3rd Qu.:1710   3rd Qu.:0   3rd Qu.:0.260   3rd Qu.:0.371  
+##  Max.   :1710   Max.   :0   Max.   :0.312   Max.   :0.428
 ```
 
 As we can see, rhythm similarity shows a more promising panorama, with ICC values 
