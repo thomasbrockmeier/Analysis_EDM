@@ -2,7 +2,7 @@
 # common descriptive statistics. The inputs are the data to be processed, and if
 # said data is raw (default = TRUE).
 
-descriptives <- function(data, raw=TRUE, conf.1.rm = TRUE, tracknames = TRUE, polarize=FALSE) {
+descriptives <- function(data, raw=TRUE, conf.1.rm = FALSE, tracknames = TRUE, polarize=FALSE) {
         require("psych")
 #         Load the pair list.
         source("tracklist.R")

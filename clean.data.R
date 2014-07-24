@@ -11,9 +11,9 @@
 #         Track 1 name
 #         Track 2 name
 #         Each participant as a column
-clean.data.pairwise <- function(raw.data, conf.1.rm = TRUE, tracknames = TRUE, polarize = FALSE){
+clean.data.pairwise <- function(raw.data, conf.1.rm = FALSE, tracknames = FALSE, polarize = FALSE){
         #         Get the ratings from the raw data
-        if (ncol(raw.data) == 453){
+        if (ncol(raw.data) >= 453){
                 data = raw.data[, seq(27, 406, 2)]
                 colnames(data) <- seq(1,190)
                 
@@ -22,7 +22,7 @@ clean.data.pairwise <- function(raw.data, conf.1.rm = TRUE, tracknames = TRUE, p
                 colnames(data) <- c(7, 17, 21, 39, 47, 53, 59, 62, 94, 111, 119, 149, 151, 176, 178, 184, 188, 190)
         }
         #         Get the confidence levels for the ratings
-        if (ncol(raw.data) == 453){
+        if (ncol(raw.data) >= 453){
                 conf = raw.data[, seq(28, 406, 2)]
                 colnames(conf) <- seq(1,190)
                 
@@ -56,9 +56,9 @@ clean.data.pairwise <- function(raw.data, conf.1.rm = TRUE, tracknames = TRUE, p
 # and the subjects as cases. It takes answers from the raw data (disregarding
 # the reliability check pairs), and removes the ratings that were reported as "Not
 # confident" if conf.1.rm = TRUE (default). 
-clean.data.subjectwise <- function(raw.data, conf.1.rm = TRUE, polarize = FALSE){
+clean.data.subjectwise <- function(raw.data, conf.1.rm = FALSE, polarize = FALSE){
         #         Get the ratings from the raw data
-        if (ncol(raw.data) == 453){
+        if (ncol(raw.data) >= 453){
                 data = raw.data[, seq(27, 406, 2)]
                 colnames(data) <- seq(1,190)
                 
@@ -67,7 +67,7 @@ clean.data.subjectwise <- function(raw.data, conf.1.rm = TRUE, polarize = FALSE)
                 colnames(data) <- c(7, 17, 21, 39, 47, 53, 59, 62, 94, 111, 119, 149, 151, 176, 178, 184, 188, 190)
         }
         #         Get the confidence levels for the ratings
-        if (ncol(raw.data) == 453){
+        if (ncol(raw.data) >= 453){
                 conf = raw.data[, seq(28, 406, 2)]
                 colnames(conf) <- seq(1,190)
                 
@@ -87,7 +87,7 @@ clean.data.subjectwise <- function(raw.data, conf.1.rm = TRUE, polarize = FALSE)
 
 confidence.values <- function(raw.data, conf.1.rm = FALSE){
         #         Get the confidence levels for the ratings
-        if (ncol(raw.data) == 453){
+        if (ncol(raw.data) >= 453){
                 conf = raw.data[, seq(28, 406, 2)]
                 colnames(conf) <- seq(1,190)
                 
